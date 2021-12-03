@@ -55,22 +55,22 @@ export function getStatistics(array) {
     let min = 0;
     let median = 0;
     let max = 0;
-    let fn_variance = 0;
+    let variance = 0;
     let mean = 0;
     let length = 0;
     let sum = 0;
     let standard_deviation = 0;
-    if (array.length > 0) {
-        var sorted_array = array.sort(function(a,b){return a-b});
+    if ([...array].length > 0) {
+        var sorted_array = [...array].sort(function(a,b){return a-b});
         min = sorted_array[0];
         median = getMedian(array);
-        max = sorted_array[sorted_array,length - 1]
+        max = sorted_array[sorted_array.length - 1]
         mean = getSum(array);
-        fn_variance = variance(array, mean);
+        variance  = variance(array, mean);
         length = array.length;
         sum = getSum(array);
         standard_deviation = Math.sqrt(variance);
-        return {min: min, median: median, max: max, variance: fn_variance, mean: mean, length: length, sum: sum, standard_deviation: standard_deviation}
+        return {length, sum, mean, median, min, max, variance, standard_deviation}
     } else {
         return "";
     }
