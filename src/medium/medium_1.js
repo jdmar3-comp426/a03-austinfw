@@ -64,7 +64,7 @@ export function getStatistics(array) {
         min = sorted_array[0];
         median = getMedian(array);
         max = sorted_array[sorted_array.length - 1]
-        mean = getSum(array);
+        mean = getSum(array)/[...array].length;
         let variance  = var1(array, mean);
         length = array.length;
         sum = getSum(array);
