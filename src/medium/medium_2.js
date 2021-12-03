@@ -14,7 +14,7 @@ for (let i = 0; mpg_data.length; i++) {
     b[i] = mpg_data[i].city_mpg;
 }
 let highway = getStatistics(a).mean;
-let city = getStatistics(b.mean)
+let city = getStatistics(b).mean;
 
 let makeyear = [];
 for (let i = 0; mpg_data.length; i++) {
@@ -48,7 +48,7 @@ let hybridarray = mpg_data.filter(hybrid);
 
 export const allCarStats = {
     avgMpg: {city, highway},
-    allYearStats: makeyear,
+    allYearStats: getStatistics(makeyear),
     ratioHybrids: numhybrids/mpg_data.length
 };
 
