@@ -7,6 +7,26 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 see under the methods section
 */
 
+let a = [];
+let b = [];
+for (let i = 0; mpg_data.length; i++) {
+    a[i] = mpg_data[i].highway_mpg;
+    b[i] = mpg_data[i].city_mpg;
+}
+let highway = getStatistics(a).mean;
+let city = getStatistics(b.mean)
+
+let makeyear = [];
+for (let i = 0; mpg_data.length; i++) {
+   makeyear[i] = mpg_data[i].year;
+}
+
+let numhybrids = 0;
+for (let i = 0; mpg_data.length; i++) {
+    if (mpg_data[i].hybrid){
+        numhybrids += 1;
+    }
+ }
 
 /**
  * This object contains data that has to do with every car in the `mpg_data` object.
@@ -19,11 +39,20 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
+
+ export function hybrid(o) {
+    return o.hybrid;
+}
+
+let hybridarray = mpg_data.filter(hybrid);
+
 export const allCarStats = {
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+    avgMpg: {city, highway},
+    allYearStats: makeyear,
+    ratioHybrids: numhybrids/mpg_data.length
 };
+
+
 
 
 /**
@@ -84,6 +113,6 @@ export const allCarStats = {
  * }
  */
 export const moreStats = {
-    makerHybrids: undefined,
+    makerHybrids: hybridarray,
     avgMpgByYearAndHybrid: undefined
 };
