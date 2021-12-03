@@ -10,7 +10,8 @@
  */
 export function sumToString(a, b) {
     let sum = a + b
-    return `${a.toString} + ${b.toString} = ${sum.toString}`
+    let otput = a + " + " +  b + " = " + sum   
+    return otput
 
 }
 
@@ -49,7 +50,7 @@ export function maxAndMin(numbers) {
     let nums = numbers.sort(function(a,b){return a-b});
     minimum = nums[0];
     maximum = nums[nums.length-1];
-    return {min: minimum, max: maximum};
+    return {minimum, maximum};
 
 }
 
