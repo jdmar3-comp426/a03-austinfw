@@ -50,7 +50,7 @@ export function maxAndMin(numbers) {
     let nums = numbers.sort(function(a,b){return a-b});
     minimum = nums[0];
     maximum = nums[nums.length-1];
-    return {minimum, maximum};
+    return {maximum, minimum};
 
 }
 
