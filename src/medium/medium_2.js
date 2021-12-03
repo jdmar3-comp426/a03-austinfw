@@ -9,7 +9,7 @@ see under the methods section
 
 let a = [];
 let b = [];
-for (let i = 0; mpg_data.length; i++) {
+for (let i = 0; i < mpg_data.length; i++) {
     a[i] = mpg_data[i].highway_mpg;
     b[i] = mpg_data[i].city_mpg;
 }
@@ -17,12 +17,12 @@ let highway = getStatistics(a).mean;
 let city = getStatistics(b).mean;
 
 let makeyear = [];
-for (let i = 0; mpg_data.length; i++) {
+for (let i = 0; i < mpg_data.length; i++) {
    makeyear[i] = mpg_data[i].year;
 }
 
 let numhybrids = 0;
-for (let i = 0; mpg_data.length; i++) {
+for (let i = 0; i < mpg_data.length; i++) {
     if (mpg_data[i].hybrid){
         numhybrids += 1;
     }
