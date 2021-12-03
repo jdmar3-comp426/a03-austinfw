@@ -9,7 +9,7 @@ import {variance} from "./data/stats_helpers.js";
  */
 export function getSum(array) {
     var sum = 0;
-    for (let i = 1; i < array.length; i++) {
+    for (let i = 0; i < array.lensgth; i++) {
         sum += array[i];
     }
     return sum;
@@ -26,7 +26,7 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    var sorted_array = array.sort(function(a,b){return a-b});
+    var sorted_array = [...array].sort(function(a,b){return a-b});
     var middle = Math.floor(sorted_array.length / 2);
     return sorted_array % 2 == 0 ? sorted_array[middle] : (sorted_array[middle - 1] + sorted_array[middle] / 2)
 
