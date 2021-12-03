@@ -103,7 +103,7 @@ export function removeKeyNonDestructive(object, key) {
 export function removeKeys(object, keyList) {
    let newobject = Object.assign({}, object);
    for (let n = 0; n < keyList.length; n++) {
-      newobject = removeKey(newobkect, keyList[i]);
+      newobject = removeKey(newobject, keyList[i]);
    }
      
 
